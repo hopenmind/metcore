@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metcore-gui"
+version = "0.1.0"
+description = "Unified PyQt6 desktop GUI for the Hope 'n Mind Scientific Suite. Hosts one tab per installed sub-module (discovered via entry-points), lifts the BoltZ-Kernel branding & 7-format academic export surface, designed to package cleanly as an .exe via PyInstaller."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [{ name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: Qt",
+    "Environment :: MacOS X",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "PyQt6>=6.5",
+    "matplotlib>=3.6",
+    "numpy>=1.22",
+    "metcore-export>=0.1.0",    "obliquity-ng>=0.1.0",
+    "memkern>=0.1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4", "pytest-qt>=4.3"]
+exe = ["pyinstaller>=6.0"]
+
+[project.scripts]
+metcore-gui = "metcore_gui.__main__:main"
+
+[project.entry-points."metcore.gui_panels"]
+obliquity-ng = "metcore_gui.ng_panel:make_panel"
+memkern-rheology = "metcore_gui.rheology_panel:make_panel"
+boltz-kernel = "metcore_gui.quantum_panel:make_panel"
+paper3a-neural = "metcore_gui.neural_panel:make_panel"
+met-shortcuts = "metcore_gui.shortcuts_panel:make_panel"
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+metcore_gui = ["assets/*.png", "assets/*.ico"]

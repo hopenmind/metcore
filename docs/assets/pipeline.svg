@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="200" rx="14" fill="#ffffff" stroke="#dfe6f0"/>
+  <text x="40" y="46" font-size="20" font-weight="700" fill="#14223b">full_diagnosis: the coherence to decoherence bench in one call</text>
+  <g font-size="15">
+    <rect x="40"  y="78" width="170" height="64" rx="10" fill="#eaf1fb" stroke="#1f4e8c"/><text x="125" y="116" text-anchor="middle" fill="#14223b">measured C(tau)</text>
+    <rect x="250" y="78" width="170" height="64" rx="10" fill="#f3f7fc" stroke="#3a6fb0"/><text x="335" y="110" text-anchor="middle" fill="#14223b">embeddability</text><text x="335" y="128" text-anchor="middle" font-size="12" fill="#5a6b86">applies? order K</text>
+    <rect x="460" y="78" width="170" height="64" rx="10" fill="#f3f7fc" stroke="#3a6fb0"/><text x="545" y="116" text-anchor="middle" fill="#14223b">Prony compile</text>
+    <rect x="670" y="78" width="170" height="64" rx="10" fill="#f3f7fc" stroke="#3a6fb0"/><text x="755" y="110" text-anchor="middle" fill="#14223b">CP-divisibility</text><text x="755" y="128" text-anchor="middle" font-size="12" fill="#5a6b86">Lindblad ok?</text>
+    <rect x="880" y="78" width="170" height="64" rx="10" fill="#fdecea" stroke="#c0392b"/><text x="965" y="110" text-anchor="middle" fill="#14223b">Lindblad-gap</text><text x="965" y="128" text-anchor="middle" font-size="12" fill="#5a6b86">how wrong?</text>
+    <rect x="1080" y="78" width="90" height="64" rx="10" fill="#eef7ee" stroke="#2e7d32"/><text x="1125" y="116" text-anchor="middle" fill="#14223b">verdict</text>
+  </g>
+  <g stroke="#9bb4d6" stroke-width="2" fill="none">
+    <path d="M210,110 L250,110"/><path d="M420,110 L460,110"/><path d="M630,110 L670,110"/><path d="M840,110 L880,110"/><path d="M1050,110 L1080,110"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="660" rx="16" fill="#ffffff" stroke="#dfe6f0"/>
+  <text x="600" y="46" text-anchor="middle" font-size="26" font-weight="700" fill="#14223b">One engine, four scientific dialects</text>
+  <!-- domain inputs -->
+  <g font-size="16" fill="#14223b">
+    <rect x="40" y="110" width="240" height="70" rx="10" fill="#eaf1fb" stroke="#1f4e8c"/>
+    <text x="160" y="140" text-anchor="middle" font-weight="600">Quantum</text>
+    <text x="160" y="163" text-anchor="middle" font-size="14">spectral density J(omega)</text>
+    <rect x="40" y="210" width="240" height="70" rx="10" fill="#eaf1fb" stroke="#1f4e8c"/>
+    <text x="160" y="240" text-anchor="middle" font-weight="600">Classical and Rheology</text>
+    <text x="160" y="263" text-anchor="middle" font-size="14">relaxation modulus G(t)</text>
+    <rect x="40" y="310" width="240" height="70" rx="10" fill="#eaf1fb" stroke="#1f4e8c"/>
+    <text x="160" y="340" text-anchor="middle" font-weight="600">Neural</text>
+    <text x="160" y="363" text-anchor="middle" font-size="14">synaptic kernel K(t)</text>
+  </g>
+  <!-- adapter funnel to C(tau) -->
+  <g>
+    <path d="M280,145 C360,145 360,245 430,245" fill="none" stroke="#9bb4d6" stroke-width="2"/>
+    <path d="M280,245 L430,245" fill="none" stroke="#9bb4d6" stroke-width="2"/>
+    <path d="M280,345 C360,345 360,245 430,245" fill="none" stroke="#9bb4d6" stroke-width="2"/>
+    <rect x="430" y="210" width="170" height="70" rx="10" fill="#fff7e6" stroke="#c9a84c"/>
+    <text x="515" y="240" text-anchor="middle" font-size="16" font-weight="600" fill="#14223b">adapters</text>
+    <text x="515" y="262" text-anchor="middle" font-size="14" fill="#5a4a2a">native input to C(tau)</text>
+  </g>
+  <!-- MET engine -->
+  <path d="M600,245 L660,245" fill="none" stroke="#9bb4d6" stroke-width="2"/>
+  <rect x="660" y="195" width="200" height="100" rx="12" fill="#1f4e8c"/>
+  <text x="760" y="232" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">MET engine</text>
+  <text x="760" y="258" text-anchor="middle" font-size="13" fill="#cfe0ff">memory kernel C(tau)</text>
+  <text x="760" y="277" text-anchor="middle" font-size="13" fill="#cfe0ff">to Markov embedding</text>
+  <!-- outputs / diagnostics -->
+  <path d="M860,245 L920,245" fill="none" stroke="#9bb4d6" stroke-width="2"/>
+  <g font-size="14" fill="#14223b">
+    <rect x="920" y="120" width="240" height="50" rx="9" fill="#f3f7fc" stroke="#3a6fb0"/>
+    <text x="1040" y="150" text-anchor="middle">embeddability gate</text>
+    <rect x="920" y="180" width="240" height="50" rx="9" fill="#f3f7fc" stroke="#3a6fb0"/>
+    <text x="1040" y="210" text-anchor="middle">Prony compile (order K)</text>
+    <rect x="920" y="240" width="240" height="50" rx="9" fill="#f3f7fc" stroke="#3a6fb0"/>
+    <text x="1040" y="270" text-anchor="middle">CP-divisibility certify</text>
+    <rect x="920" y="300" width="240" height="50" rx="9" fill="#f3f7fc" stroke="#3a6fb0"/>
+    <text x="1040" y="330" text-anchor="middle">N_G obliquity</text>
+    <rect x="920" y="360" width="240" height="50" rx="9" fill="#fdecea" stroke="#c0392b"/>
+    <text x="1040" y="390" text-anchor="middle">Lindblad-gap meter</text>
+  </g>
+  <text x="600" y="470" text-anchor="middle" font-size="15" fill="#5a6b86">
+    Access the same engine three ways: Python API, MCP server for any LLM, or the desktop GUI.</text>
+  <g font-size="15" fill="#14223b">
+    <rect x="300" y="500" width="180" height="56" rx="10" fill="#eef4fb" stroke="#1f4e8c"/>
+    <text x="390" y="534" text-anchor="middle" font-weight="600">Python API</text>
+    <rect x="510" y="500" width="180" height="56" rx="10" fill="#eef4fb" stroke="#1f4e8c"/>
+    <text x="600" y="534" text-anchor="middle" font-weight="600">MCP server</text>
+    <rect x="720" y="500" width="180" height="56" rx="10" fill="#eef4fb" stroke="#1f4e8c"/>
+    <text x="810" y="534" text-anchor="middle" font-weight="600">Desktop GUI</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. A module-specific Zenodo DOI will be minted for the 0.1.0 PyPI release; until then, please also cite the parent Hope 'n Mind Scientific Suite (DOI 10.5281/zenodo.19486927)."
+title: "memkern: Memory-kernel engine (domain-agnostic)"
+type: software
+version: 0.1.0
+date-released: 2026-04-19
+url: "https://github.com/hopenmind/hopenmind-suite/tree/main/packages/memkern"
+repository-code: "https://github.com/hopenmind/hopenmind-suite"
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+authors:
+  - family-names: "DESVAUX"
+    given-names: "G.J.Y."
+    orcid: "https://orcid.org/0009-0008-9813-4627"
+    email: "contact@hopenmind.com"
+    affiliation: "Hope 'n Mind SASU - Research"
+references:
+  - type: software
+    title: "Hope 'n Mind Scientific Suite"
+    doi: 10.5281/zenodo.19486927
+    url: "https://github.com/hopenmind/hopenmind-suite"
+    authors:
+      - family-names: "DESVAUX"
+        given-names: "G.J.Y."
+        orcid: "https://orcid.org/0009-0008-9813-4627"
+keywords:
+  - memory-kernel
+  - prony
+  - matrix-pencil
+  - exponential-fit
+  - MaxEnt
+  - maximum-entropy
+  - Jaynes maximum entropy
+  - rheology
+  - non-Markovian
+  - time-series
+abstract: >-
+  memkern is the domain-agnostic numerical core of the Hope 'n Mind
+  Scientific Suite. It provides a Matrix-Pencil Prony decomposition of
+  exponential sums together with a novel MaxEnt-based order selector
+  ("maxent_select_order"), a principled alternative to variance-ratio
+  truncation. The same primitives apply across physics (bath correlation
+  functions), rheology (Maxwell-Wiechert relaxation modulus), climate
+  (impulse response functions), biology (calcium integration, gene
+  regulation with translation lag), and general time-series analysis.

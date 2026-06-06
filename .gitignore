@@ -1,0 +1,108 @@
+# ──────────────────────────────────────────────────────────────────────────────
+#  Hope 'n Mind Scientific Suite — .gitignore
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+.installed.cfg
+MANIFEST
+
+# Virtualenvs
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_convert.py
+
+# Build artefacts
+*.exe
+*.dll
+*.dylib
+
+# Local configuration / secrets — NEVER commit
+*.local
+.env
+.env.*
+!.env.example
+secrets.yaml
+secrets.toml
+*.pem
+*.key
+
+# Scientific output (ephemeral)
+test_*/
+/*/test_output/
+/*/test_output_*/
+output/
+results/
+*.npz
+*.h5
+*.hdf5
+!tests/data/*.h5
+
+# Package-local legacy dev files (not for public)
+HANDOFF.md
+HANDOFF_CHECKSUMS.md
+doc/THEORY.md
+doc/WHY.md
+MAXENT-Kernel.exe
+papers/
+
+# desktop build artifacts
+build/_work/
+*.app
+installer/Output/
+
+
+# session parasites (never commit these)
+_ghost_originals/
+SAMPLE_*.png
+**/*.serve-patch.py
+**/pyproject.*.delta.toml
+clean_workspace.ps1
+_renametest*/
+
+# stray local files (never commit)
+*.log
+/*.pdf
+err.log

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Metcore
+Comment=Non-Markovian dynamics toolkit by Hope 'n Mind
+Exec=metcore
+Icon=metcore
+Categories=Science;Education;
+Terminal=false

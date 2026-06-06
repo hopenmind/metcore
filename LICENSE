@@ -1,0 +1,88 @@
+BoltZ-Kernel — Dual License
+===========================
+
+Copyright (c) 2008-2026 Hope 'n Mind SASU - Research
+Author: DESVAUX G.J.Y.
+ORCID: 0009-0008-9813-4627
+Contact: contact@hopenmind.com
+
+This software is dual-licensed. You may choose EITHER of the following
+licenses, but you must comply with all terms of the license you choose.
+
+================================================================================
+OPTION A — ACADEMIC AND NON-COMMERCIAL USE (Apache License, Version 2.0)
+================================================================================
+
+For academic research, teaching, non-profit research institutions, personal
+use, and any non-commercial purpose, this software is licensed under the
+Apache License, Version 2.0 (the "License"); you may not use this file
+except in compliance with the License. You may obtain a copy of the License
+at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+
+CITATION REQUIREMENT (in addition to Apache 2.0 attribution):
+If you use this software in academic work, please cite:
+
+    DESVAUX G.J.Y. (2026). BoltZ-Kernel: Non-Markovian Quantum Dynamics
+    Solver with Boltzmann Memory Kernel. Hope 'n Mind SASU - Research.
+    DOI: 10.5281/zenodo.19648837
+
+================================================================================
+OPTION B — COMMERCIAL USE (Proprietary License)
+================================================================================
+
+For any commercial use — including but not limited to integration into
+commercial products, use by for-profit entities in revenue-generating
+activities, distribution as part of a paid service, or use by commercial
+contractors performing work for profit — a separate commercial license
+from Hope 'n Mind SASU is required.
+
+Without a valid commercial license:
+
+1. OWNERSHIP
+   All source code, algorithms, documentation, and associated materials
+   in this repository remain the exclusive intellectual property of
+   Hope 'n Mind SASU - Research.
+
+2. COMMERCIAL RESTRICTIONS
+   You may NOT, for commercial purposes:
+   (a) copy, modify, merge, publish, distribute, sublicense, or sell
+       copies of this software;
+   (b) integrate the software or its derivatives into commercial products
+       or services;
+   (c) reverse-engineer, decompile, or disassemble the compiled binaries.
+
+3. OBTAINING A COMMERCIAL LICENSE
+   Contact: contact@hopenmind.com
+   Please describe your intended commercial use when requesting a license.
+
+4. NO WARRANTY
+   THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+   CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS
+   SOFTWARE.
+
+5. GOVERNING LAW
+   The commercial license is governed by French law and EU intellectual
+   property regulations. Any disputes shall be resolved in the competent
+   courts of France.
+
+================================================================================
+HOW TO CHOOSE
+================================================================================
+
+  - Academic researcher, student, or non-profit institution
+    → Use Option A (Apache 2.0). Just cite the work. No request needed.
+
+  - Commercial entity, for-profit use
+    → Use Option B. Contact contact@hopenmind.com for a commercial license.
+
+  - Unsure
+    → Contact contact@hopenmind.com. We'll help you pick.

@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metcore-mcp"
+version = "0.1.0"
+description = "Hope 'n Mind unified MCP server. Aggregates every tool in the Hope 'n Mind Scientific Suite under a single MCP connection point."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = ["mcp", "model-context-protocol", "hopenmind", "scientific-computing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "mcp>=1.0",
+    "memkern>=0.1.0",
+    "obliquity-ng>=0.1.0",
+    "metcore-export>=0.1.0",
+    "numpy>=1.22",
+]
+
+[project.optional-dependencies]
+boltz = ["boltz-kernel[mcp]>=1.1.0"]
+all = ["metcore-mcp[boltz]"]
+
+[project.scripts]
+metcore-mcp = "metcore_mcp.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

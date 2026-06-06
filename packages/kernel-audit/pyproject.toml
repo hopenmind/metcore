@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kernel-audit"
+version = "0.1.0"
+description = "Pre-flight triage tool: analyses J(ω), estimates the effective Prony order K, and reports a hardware tier (laptop / workstation / HPC). First member of the HPC-triage ladder."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "spectral-density",
+    "memory-kernel",
+    "prony",
+    "hpc-triage",
+    "complexity-estimation",
+    "MaxEnt",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.22",
+    "memkern>=0.1.0",
+    "hpc-triage>=0.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore/tree/main/packages/kernel-audit#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memkern-ladder"
+version = "0.1.0"
+description = "Triage ladder that tries three honest NZ approximation levels in order (Markovian Lindblad, Born-Markov+1, Prony-pseudomode) and stops at the first that converges. Escalates to HPC-tier tools when all three fail to meet target accuracy."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [{ name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" }]
+maintainers = [{ name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+    "memkern>=0.1.0",
+    "hpc-triage>=0.1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Repository = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]

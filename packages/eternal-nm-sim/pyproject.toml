@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eternal-nm-sim"
+version = "0.1.0"
+description = "Eternal non-Markovianity simulator — canonical Hall 2014 Pauli channel, BLP trace-distance non-Markovianity measure, and BLP-vs-N_G comparison utilities. Companion to ng-vol."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "non-Markovianity",
+    "eternal-non-Markovianity",
+    "BLP",
+    "trace-distance",
+    "Hall-channel",
+    "CP-divisibility",
+    "Pauli-channel",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.22",
+    "obliquity-ng>=0.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore/tree/main/packages/eternal-nm-sim#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+[tool.setuptools.packages.find]
+where = ["src"]

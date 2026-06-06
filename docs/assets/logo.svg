@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 320" width="1100" height="320">
+  <g transform="translate(20,20)">
+    <rect width="280" height="280" fill="#0a0f1d" rx="52"/>
+    <g transform="translate(140,140) scale(0.66)">
+      <circle cx="0" cy="0" r="180" fill="none" stroke="#334155" stroke-width="6" stroke-dasharray="10 10"/>
+      <line x1="-205" y1="0" x2="205" y2="0" stroke="#1e293b" stroke-width="4"/>
+      <line x1="0" y1="-205" x2="0" y2="205" stroke="#1e293b" stroke-width="4"/>
+      <path d="M -90,-90 C -10,-120 80,-80 120,-50 C 150,-10 60,80 -40,130 C -90,150 -120,40 0,0"
+            fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="5 5" opacity="0.7"/>
+      <g stroke="#3d7fff" stroke-width="9" stroke-linecap="round">
+        <line x1="0" y1="0" x2="-90" y2="-90"/>
+        <line x1="0" y1="0" x2="120" y2="-50"/>
+        <line x1="0" y1="0" x2="-40" y2="130"/>
+      </g>
+      <circle cx="-90" cy="-90" r="15" fill="#ffffff"/>
+      <circle cx="120" cy="-50" r="15" fill="#ffffff"/>
+      <circle cx="-40" cy="130" r="15" fill="#ffffff"/>
+      <circle cx="0" cy="0" r="46" fill="#1e3a8a" stroke="#3d7fff" stroke-width="11"/>
+    </g>
+  </g>
+  <text x="340" y="190" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#0a0f1d" letter-spacing="-4">Metcore</text>
+  <text x="1078" y="250" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-style="italic" fill="#3d7fff">by Hope 'n Mind</text>
+</svg>

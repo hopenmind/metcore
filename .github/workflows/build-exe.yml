@@ -1,0 +1,94 @@
+name: Build desktop executables
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: ${{ matrix.label }}
+    runs-on: ${{ matrix.runner }}
+    # The Intel-mac leg must never block a release (legacy platform).
+    continue-on-error: ${{ matrix.label == 'macos-x86_64' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { runner: windows-latest,   label: windows-x86_64 }
+          - { runner: macos-15-intel,   label: macos-x86_64 }   # macos-13 retired 2025-12
+          - { runner: macos-14,         label: macos-arm64 }
+          - { runner: ubuntu-latest,    label: linux-x86_64 }
+          - { runner: ubuntu-24.04-arm, label: linux-arm64 }
+          # Windows on ARM (public preview runner). Uncomment when enabled:
+          # - { runner: windows-11-arm, label: windows-arm64 }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Qt system libs (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1 libxkbcommon0 libdbus-1-3
+
+      - name: Install the suite and PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          pip install ./packages/memkern ./packages/obliquity-ng ./packages/metcore-export
+          pip install "./packages/metcore-gui[exe]"
+
+      - name: Build the executable
+        run: python packaging/build_exe.py
+
+      - name: Package macOS .dmg
+        if: runner.os == 'macOS'
+        run: bash packaging/make_dmg.sh
+
+      - name: Package Linux .AppImage
+        if: runner.os == 'Linux'
+        run: bash packaging/make_appimage.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metcore-${{ matrix.label }}
+          path: dist/*
+          if-no-files-found: error
+
+  installer-windows:
+    name: windows-installer
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: metcore-windows-x86_64
+          path: dist
+      - name: Compile installer (Inno Setup)
+        run: iscc /DExeName=metcore-windows-x86_64.exe installer\metcore.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: metcore-windows-installer
+          path: installer/Output/*.exe
+          if-no-files-found: error
+
+  release:
+    name: Attach to release
+    needs: [build, installer-windows]
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: artifacts }
+      - name: Publish release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*

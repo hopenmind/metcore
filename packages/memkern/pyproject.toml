@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memkern"
+version = "0.1.0"
+description = "Memory-kernel engine — domain-agnostic numerical core for systems with finite memory (physics, rheology, biology, climate). Matrix-Pencil Prony decomposition with MaxEnt-based order selection."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "memory-kernel",
+    "prony",
+    "matrix-pencil",
+    "exponential-fit",
+    "MaxEnt",
+    "maximum-entropy",
+    "rheology",
+    "non-Markovian",
+    "time-series",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+dev = [
+    "ruff>=0.5",
+    "mypy>=1.8",
+    "build>=1.0",
+    "twine>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore/tree/main/packages/memkern#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+[tool.setuptools.packages.find]
+where = ["src"]

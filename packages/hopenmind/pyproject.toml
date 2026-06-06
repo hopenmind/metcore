@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hopenmind"
+version = "0.1.0"
+description = "Hope 'n Mind — brand meta-package. Installing this pulls the Hope 'n Mind Scientific Suite."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = ["hopenmind", "hope-n-mind", "scientific-computing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+# The `hopenmind` distribution simply redirects to the suite.
+dependencies = [
+    "metcore>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Repository = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]

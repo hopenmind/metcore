@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hpc-triage"
+version = "0.1.0"
+description = "Triage toolkit — answers 'do you actually need a supercomputer?' for non-Markovian open-quantum-system problems. Defines the Problem/Verdict/TriageTool abstraction that the six triage tools of the Hope 'n Mind Suite implement."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "hpc",
+    "triage",
+    "non-Markovian",
+    "open-quantum-systems",
+    "complexity-estimation",
+    "resource-sizing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.22",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore/tree/main/packages/hpc-triage#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+[tool.setuptools.packages.find]
+where = ["src"]

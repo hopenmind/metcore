@@ -1,0 +1,141 @@
+# ──────────────────────────────────────────────────────────────────────────────
+#  Hope 'n Mind Scientific Suite — Workspace root
+#  Unified monorepo for scientific tools under the HNM umbrella.
+# ──────────────────────────────────────────────────────────────────────────────
+
+[project]
+name = "metcore"
+version = "0.1.0"
+description = "Hope 'n Mind Scientific Suite — unified monorepo of scientific tools under the HNM umbrella. Meta-package aggregating BoltZ-Kernel and companion tools."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "scientific-computing",
+    "open-quantum-systems",
+    "non-Markovian",
+    "memory-kernel",
+    "MaxEnt",
+    "monorepo",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+
+# Meta-package: pulling this in installs every stable sub-tool.
+dependencies = [
+    "memkern>=0.1.0",
+    "boltz-kernel>=1.1.0",
+]
+
+[project.optional-dependencies]
+all = [
+    "boltz-kernel>=1.1.0",
+    "metcore-mcp>=0.1.0",
+]
+mcp = [
+    "metcore-mcp>=0.1.0",
+]
+test = [
+    "boltz-kernel[test,mcp]>=1.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"DOI" = "https://doi.org/10.5281/zenodo.20557167"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+# ──────────────────────────────────────────────────────────────────────────────
+#  uv workspace — each member has its own pyproject.toml / version / DOI
+# ──────────────────────────────────────────────────────────────────────────────
+
+# `packages/hopenmind/` is intentionally excluded from the workspace —
+# it is a PyPI brand-name stub that depends on `metcore` and
+# therefore would create a resolution cycle if synced locally. It is
+# built and published as a standalone package.
+[tool.uv.workspace]
+members = [
+    "packages/boltz-kernel",
+    "packages/memkern",
+    "packages/memkern-rheology",
+    "packages/obliquity-ng",
+    "packages/eternal-nm-sim",
+    "packages/hpc-triage",
+    "packages/kernel-audit",
+    "packages/memkern-ladder",
+    "packages/hpc-oracle",
+    "packages/bench-extrap",
+    "packages/local-dispatcher",
+    "packages/hpc-manifest",
+    "packages/metcore-export",
+    "packages/metcore-cli",
+    "packages/metcore-gui",
+    "packages/metcore-mcp",
+]
+
+# Workspace siblings resolved locally instead of from PyPI.
+[tool.uv.sources]
+boltz-kernel = { workspace = true }
+memkern = { workspace = true }
+memkern-rheology = { workspace = true }
+obliquity-ng = { workspace = true }
+eternal-nm-sim = { workspace = true }
+hpc-triage = { workspace = true }
+kernel-audit = { workspace = true }
+memkern-ladder = { workspace = true }
+hpc-oracle = { workspace = true }
+bench-extrap = { workspace = true }
+local-dispatcher = { workspace = true }
+hpc-manifest = { workspace = true }
+metcore-export = { workspace = true }
+metcore-cli = { workspace = true }
+metcore-gui = { workspace = true }
+metcore-mcp = { workspace = true }
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []  # meta-package, no Python modules at this level
+
+# ──────────────────────────────────────────────────────────────────────────────
+#  Shared tool configuration (inherited by members unless overridden)
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+extend-exclude = ["legacy", "**/ui/main_window.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["packages"]
+python_files = ["test_*.py"]
+# importlib mode gives each test file a unique module name, preventing
+# basename collisions between packages/*/tests/test_*.py when the suite
+# is collected together from the workspace root.
+addopts = ["-ra", "--strict-markers", "--import-mode=importlib"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "analytical: exact reference-case tests",
+    "integration: end-to-end pipeline tests",
+]

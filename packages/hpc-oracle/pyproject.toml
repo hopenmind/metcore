@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hpc-oracle"
+version = "0.1.0"
+description = "Cost & memory oracle for NZ problems — predicts wall-time and RAM on laptop / workstation / GPU / HPC tiers from (d, K, t_max, N)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [{ name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = ["numpy>=1.22", "hpc-triage>=0.1.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]

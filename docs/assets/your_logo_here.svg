@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect x="14" y="14" width="484" height="484" rx="96" fill="#f4f6fa"
+        stroke="#8aa3c4" stroke-width="14" stroke-dasharray="34 22"/>
+  <g opacity="0.13" transform="translate(256,256) scale(0.82)">
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#1f4e8c" stroke-width="6" stroke-dasharray="8 8"/>
+    <g stroke="#1f4e8c" stroke-width="9" stroke-linecap="round">
+      <line x1="0" y1="0" x2="-90" y2="-90"/>
+      <line x1="0" y1="0" x2="120" y2="-50"/>
+      <line x1="0" y1="0" x2="-40" y2="130"/>
+    </g>
+    <circle cx="-90" cy="-90" r="14" fill="#1f4e8c"/>
+    <circle cx="120" cy="-50" r="14" fill="#1f4e8c"/>
+    <circle cx="-40" cy="130" r="14" fill="#1f4e8c"/>
+    <circle cx="0" cy="0" r="44" fill="#1f4e8c"/>
+  </g>
+  <text x="256" y="225" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="72" font-weight="700" fill="#5577a3">YOUR</text>
+  <text x="256" y="305" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="72" font-weight="700" fill="#5577a3">LOGO</text>
+  <text x="256" y="385" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="72" font-weight="700" fill="#5577a3">HERE</text>
+</svg>

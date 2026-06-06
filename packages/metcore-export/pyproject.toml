@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metcore-export"
+version = "0.1.0"
+description = "Academic-figure export + branding for the Hope 'n Mind Suite. 7 formats (PNG 300/600, PDF, SVG, EPS, TIFF 300/600), editable institute header/logo/footer, invisible HNM metadata watermark."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [{ name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" }]
+maintainers = [{ name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = ["matplotlib>=3.6", "numpy>=1.22", "pillow>=9.0", "openpyxl>=3.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Repository = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+metcore_export = ["assets/*.png"]

@@ -1,0 +1,121 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boltz-kernel"
+version = "1.1.0"
+description = "Non-Markovian quantum dynamics solver with Boltzmann memory kernel (MaxEnt-derived). Diagnostic tool for open quantum systems beyond Lindblad."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-BoltZ-Commercial" }
+authors = [
+    { name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" },
+]
+maintainers = [
+    { name = "Hope 'n Mind SASU - Research", email = "contact@hopenmind.com" },
+]
+keywords = [
+    "quantum",
+    "non-Markovian",
+    "open-quantum-systems",
+    "Lindblad",
+    "memory-kernel",
+    "MaxEnt",
+    "Boltzmann",
+    "quantum-photonics",
+    "spectral-density",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+    "matplotlib>=3.6",
+    "typer>=0.12",
+    "rich>=13.0",
+    "questionary>=2.0",
+    "PyYAML>=6.0",
+    "tomli>=2.0; python_version<'3.11'",
+]
+
+[project.optional-dependencies]
+gui = ["PyQt6>=6.5"]
+hdf5 = ["h5py>=3.8"]
+parquet = ["pyarrow>=14"]
+xml = ["lxml>=4.9"]
+jsonld = ["rdflib>=7.0"]
+term-image = ["term-image>=0.7"]
+mcp = ["mcp>=1.0"]
+test = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-xdist>=3.5",
+]
+dev = [
+    "ruff>=0.5",
+    "mypy>=1.8",
+    "build>=1.0",
+    "twine>=4.0",
+]
+all = [
+    "boltz-kernel[gui,hdf5,parquet,xml,jsonld,term-image,mcp]",
+]
+
+[project.scripts]
+boltz-kernel = "boltz_kernel.__main__:app"
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+Documentation = "https://github.com/hopenmind/metcore#readme"
+Repository = "https://github.com/hopenmind/metcore"
+Issues = "https://github.com/hopenmind/metcore/issues"
+"DOI" = "https://doi.org/10.5281/zenodo.19648837"
+"ORCID" = "https://orcid.org/0009-0008-9813-4627"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"boltz_kernel" = ["ui/assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--cov=boltz_kernel",
+    "--cov-report=term-missing",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "analytical: exact reference-case tests",
+    "integration: end-to-end pipeline tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = false
+warn_unused_configs = true
+ignore_missing_imports = true

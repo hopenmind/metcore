@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use a tool from this suite, please cite the specific sub-package (see its own CITATION.cff) AND the suite DOI below. To cite the suite as a whole, use this entry."
+title: "Hope 'n Mind Scientific Suite"
+type: software
+version: 0.1.0
+date-released: 2026-04-19
+doi: 10.5281/zenodo.20557167
+url: "https://github.com/hopenmind/hopenmind-suite"
+repository-code: "https://github.com/hopenmind/hopenmind-suite"
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+authors:
+  - family-names: "DESVAUX"
+    given-names: "G.J.Y."
+    orcid: "https://orcid.org/0009-0008-9813-4627"
+    email: "contact@hopenmind.com"
+    affiliation: "Hope 'n Mind SASU - Research"
+keywords:
+  - scientific-computing
+  - open-quantum-systems
+  - non-Markovian
+  - memory-kernel
+  - MaxEnt
+  - Jaynes maximum entropy
+  - Boltzmann kernel
+  - monorepo
+abstract: >-
+  Hope 'n Mind Scientific Suite is a unified monorepo of scientific tools
+  under the HNM umbrella. Each sub-package has its own version, its own
+  Zenodo DOI, and is installable independently. Current members include
+  BoltZ-Kernel (non-Markovian quantum solver with Boltzmann memory kernel)
+  and forthcoming geometric non-Markovianity measures, Lindblad-distance
+  diagnostics, and cross-domain memory-kernel adapters for rheology,
+  biology, and climate.

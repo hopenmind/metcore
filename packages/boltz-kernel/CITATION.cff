@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "BoltZ-Kernel: Non-Markovian Quantum Dynamics Solver with Boltzmann Memory Kernel"
+type: software
+version: 1.1.0
+date-released: 2026-04-19
+doi: 10.5281/zenodo.19648837
+url: "https://github.com/hopenmind/hopenmind-suite"
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+license: Apache-2.0
+repository-code: "https://github.com/hopenmind/hopenmind-suite"
+authors:
+  - family-names: "DESVAUX"
+    given-names: "G.J.Y."
+    orcid: "https://orcid.org/0009-0008-9813-4627"
+    email: "contact@hopenmind.com"
+    affiliation: "Hope 'n Mind SASU - Research"
+keywords:
+  - non-Markovian
+  - quantum dynamics
+  - memory kernel
+  - Boltzmann kernel
+  - MaxEnt
+  - Jaynes maximum entropy
+  - open quantum systems
+  - Lindblad
+  - spectral density
+  - photonic systems
+  - quantum photonics
+abstract: >-
+  BoltZ-Kernel is a diagnostic solver for open quantum systems beyond the
+  Lindblad (Markovian) approximation. It computes Boltzmann memory kernels
+  K*(t, s) from an arbitrary spectral density J(ω) via the Jaynes
+  Maximum-Entropy principle, solves the generalised integro-differential
+  master equation, and quantifies the deviation from the standard Lindblad
+  prediction. Covers Ohmic, super-Ohmic, Lorentzian (cavity QED),
+  band-edge (photonic crystal), photonic-crystal-with-gap, and
+  waveguide-QED environments; supports arbitrary J(ω) via CSV import,
+  Python formula, or stdin. Exposes a PyQt6 GUI, a Unix-style CLI, and
+  a YAML-driven batch pipeline sharing the same core engine. Dual-licensed
+  (Apache-2.0 for academic / non-commercial use; proprietary for commercial).

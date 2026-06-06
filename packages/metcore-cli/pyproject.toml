@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metcore-cli"
+version = "0.1.0"
+description = "Unified CLI for the Hope 'n Mind Scientific Suite. Auto-discovers installed sub-packages via entry-points, offers `hopenmind install <pkg>` for on-demand package installation (PyPI or GitHub URL), and distributes all sub-tool CLIs under one command root."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0 OR LicenseRef-HopenMind-Commercial" }
+authors = [{ name = "DESVAUX G.J.Y.", email = "contact@hopenmind.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = ["typer>=0.12", "rich>=13.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[project.scripts]
+hopenmind = "metcore_cli.__main__:app"
+
+[project.urls]
+Homepage = "https://github.com/hopenmind/metcore"
+
+[tool.setuptools.packages.find]
+where = ["src"]
